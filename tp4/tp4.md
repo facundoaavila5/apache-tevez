@@ -1,4 +1,4 @@
-# TP3 — Módulos de kernel
+# TP4 — Módulos de Kernel
 
 ### Grupo: Apache Tevez
 
@@ -18,7 +18,7 @@
 
 ---
 
-## Desafío 1
+## Desafío #1
 ### ¿Qué es el checkinstall y para qué sirve?
 El `checkinstall` es un programa que reemplaza al `make install` y en lugar de instalar los archivos sueltos por el sistema, crea un paquete .deb (o .rpm). De esta manera se puede desinstalar limpiamente después con el gestor de paquetes y tener un registro de qué archivos instaló el programa.
 
@@ -92,3 +92,23 @@ Cuando un módulo se carga sin firma (como ocurre con mimodulo.ko), el kernel lo
 
 La palabra "tainting" indica que el kernel fue "contaminado" con 
 código no verificado, lo cual es una señal de advertencia de seguridad.
+=======
+## Desafío #2
+
+### ¿ Qué funciones tiene disponible un programa y un módulo ?
+
+Funciones disponibles para un Programa
+
+Un programa en ejecución tiene acceso a cuatro grandes grupos de funciones:
+
+1. Funciones propias: Las que el programador definió directamente en el código fuente (por ejemplo main(), funciones auxiliares, etc.).
+2. Funciones de biblioteca estándar: Se enlazan durante la compilación o en tiempo de ejecución. Son funciones ya implementadas que el sistema provee (printf, malloc, strlen, etc.).
+3. Funciones de módulos importados: Cualquier función pública que se haya importado de otro módulo o librería externa. Solo se accede a las que el módulo exporta.
+4. Llamadas al sistema (syscalls): Interfaz directa con el sistema operativo. Son los servicios que el SO expone para manejo de archivos (open, read, write), procesos (fork, exec), redes (socket), memoria, etc.
+
+### Espacio de usuario o espacio del kernel.
+
+### Espacio de datos.
+
+### Drivers. Investigar contenido de /dev.
+
